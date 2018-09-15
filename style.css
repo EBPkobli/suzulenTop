@@ -1,0 +1,115 @@
+body
+{
+    background-color: blueviolet;
+}
+.container
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.yTop-cont
+{
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+
+}
+.yTop-cont:after
+{
+	content: "";
+	position: absolute;
+	background-color: black;
+	bottom: 0;
+	left: 50%;
+	opacity: 0.4;
+	filter: blur(1px);
+	width: 20px;
+	height: 10px;
+	border-radius: 50%;
+	animation: gAnim 2s linear infinite;
+}
+.yTop
+{
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: anim 2s linear infinite;
+    
+}
+.yTop-cont:nth-child(2):after
+{
+	animation-delay: -0.3s;
+}
+.yTop-cont:nth-child(3):after
+{
+	animation-delay: -0.6s;
+}
+.yTop-cont:nth-child(2) .yTop
+{
+	animation-delay: -0.3s;
+}
+.yTop-cont:nth-child(3) .yTop
+{
+	animation-delay: -0.6s;
+}
+@keyframes anim
+{
+	0%{
+		transform-origin: 400% 200%;
+		transform: rotate(0deg);
+	}
+	50%
+	{
+		transform-origin: 400% 50%;
+		transform: rotate(360deg);
+	}
+	50.1%
+	{
+		transform-origin: -400% 50%;
+		transform: rotate(0deg);
+	}
+	100%
+	{
+		transform-origin: -400% 50%;
+		transform: rotate(-360deg);
+	}
+}
+@keyframes gAnim
+{
+	0%{}
+	12.5%{
+		transform: translate(50px) scale(0.6);
+	}
+	25%{
+		transform: translate(110px);
+	}
+	37.5%{
+		transform: translate(50px) scale(1.4);
+	}
+	50%{
+		transform: translate(0);
+	}
+	62.5%{
+		transform: translate(-70px) scale(0.6);
+	}
+	75%{
+		transform: translate(-130px);
+	}
+	87.5%
+	{
+		transform: translate(-70px) scale(1.4h);
+	}
+	100%{
+		transform: translate(0);
+	}
+}
